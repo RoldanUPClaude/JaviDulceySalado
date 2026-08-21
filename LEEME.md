@@ -131,16 +131,85 @@ y queda solo el precio limpio.
 
 ---
 
-## 6. Publicarla en internet (gratis)
+## 6. Publicarla en Vercel
 
-**Lo más simple — Netlify Drop:** entra a `app.netlify.com/drop` y arrastra la
-carpeta completa (con `fotos/` y `marca/` adentro). En segundos te da una
-dirección tipo `algo.netlify.app`, que puedes renombrar desde el panel.
+El proyecto ya es un repositorio de Git con el primer commit hecho, e incluye
+`vercel.json` (caché de imágenes y URLs sin `.html`) y `.gitignore`.
 
-**Con dominio propio:** compra el dominio (NIC Chile para un `.cl`) y conéctalo
-desde *Domain settings* en Netlify. El certificado HTTPS es automático.
+### Ruta recomendada: GitHub + Vercel
 
-Alternativas equivalentes: Vercel, Cloudflare Pages, GitHub Pages.
+Se configura una vez y después cada `git push` republica sola la página.
+
+**1. Crea el repositorio en GitHub**
+
+Entra a [github.com/new](https://github.com/new). Nombre sugerido:
+`dulce-salado-landing`. Déjalo **vacío**: sin README, sin .gitignore, sin
+licencia. Puede ser privado; Vercel igual lo lee.
+
+**2. Conéctalo desde tu computador**
+
+En la carpeta del proyecto, reemplazando `TU-USUARIO`:
+
+```bash
+git remote add origin https://github.com/TU-USUARIO/dulce-salado-landing.git
+```
+
+```bash
+git push -u origin main
+```
+
+La primera vez se abre una ventana del navegador para que inicies sesión en
+GitHub. Es tu sesión, la completas tú; Git guarda el acceso y no vuelve a
+preguntar.
+
+**3. Impórtalo en Vercel**
+
+- Entra a [vercel.com](https://vercel.com) y crea la cuenta con **Continue with GitHub**
+- *Add New…* → *Project*
+- Busca `dulce-salado-landing` y pulsa **Import**
+- No toques nada de Framework ni Build: es HTML puro, Vercel lo detecta como
+  *Other* y eso está bien
+- **Deploy**
+
+En menos de un minuto queda en `dulce-salado-landing.vercel.app`. El nombre se
+cambia en *Settings → General → Project Name*.
+
+**4. Para actualizar la página, de ahora en adelante**
+
+```bash
+git add -A
+```
+
+```bash
+git commit -m "Actualizo fotos y fechas"
+```
+
+```bash
+git push
+```
+
+Vercel detecta el push y republica sola en segundos.
+
+### Ruta alternativa: subir los archivos a mano
+
+Si el `git push` te da problemas, en [github.com/new](https://github.com/new)
+crea el repositorio, entra a **uploading an existing file** y arrastra ahí
+`index.html`, `vercel.json` y las carpetas `marca/` y `fotos/`. Después sigue
+desde el paso 3. Funciona igual, pero cada actualización hay que subirla a mano.
+
+### Ruta con el CLI de Vercel
+
+Requiere instalar [Node.js](https://nodejs.org) (no está en este equipo). Una
+vez instalado: `npm i -g vercel`, luego `vercel login` y `vercel --prod` dentro
+de la carpeta. No necesita GitHub, pero cada actualización exige repetir el
+comando. El archivo `.vercelignore` ya está puesto para que no suba el LEEME
+ni los archivos de trabajo.
+
+### Dominio propio
+
+Con un `.cl` comprado en [NIC Chile](https://nic.cl): en Vercel, *Settings →
+Domains → Add*, escribe el dominio y Vercel te muestra los registros DNS que
+hay que pegar en el panel de NIC. El certificado HTTPS es automático.
 
 Después, el enlace va en la bio de Instagram. Ahí es donde va a vivir.
 
