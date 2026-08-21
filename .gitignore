@@ -1,0 +1,10 @@
+# Copia generada para publicar como Artifact de Claude (la regenera publicar.py)
+dist/
+
+# Vercel
+.vercel/
+
+# Basura del sistema
+Thumbs.db
+desktop.ini
+.DS_Store

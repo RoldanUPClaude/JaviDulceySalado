@@ -1,0 +1,27 @@
+FOTOS DE LA LANDING
+===================
+
+Guarda aquí tus fotos con estos nombres exactos (en minúsculas):
+
+  javi.jpg   -> tu retrato, para la sección "Hola, soy Javi"
+  g1.jpg     -> tu mejor galleta decorada
+  g2.jpg     -> un primer plano del detalle
+  g3.jpg     -> un set completo empacado
+  g4.jpg     -> tus manos con la manga
+  g5.jpg     -> la mesa de trabajo
+  g6.jpg     -> varios diseños juntos
+
+Cómo bajarlas de tu Instagram: abre la publicación desde el celular,
+toca los tres puntos y "Guardar"; o desde el computador, clic derecho
+sobre la imagen y "Guardar imagen como".
+
+Antes de subirlas:
+ - Recórtalas cuadradas (1:1). En la galería se recortan solas, pero
+   así controlas tú qué queda dentro.
+ - Ancho de 1200 px es más que suficiente.
+ - Que pesen menos de 300 KB cada una (usa squoosh.app si pesan más).
+   La mayoría entrará desde el celular con datos: cada MB de más son
+   segundos de espera y gente que se va.
+
+Mientras un archivo no exista, el recuadro se queda con su texto guía
+y la página no se rompe.
